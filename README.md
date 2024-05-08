@@ -1,3 +1,18 @@
+## Forked changes to include a custom working example
+```
+sudo yum install mecab-0.996-2.module+el8.6.0+16523+5cb0e868
+sudo yum install mecab-devel.x86_64 mecab-ipadic.x86_64
+
+pyenv virtualenv 3.11.9 venv_tts
+pyenv activate venv_tts
+pip --require-virtualenv install -e .
+python -m unidic download
+
+python demo_tts.py -t "The 6th Symphony is Tchaikovsky most famous work" -o en-india.wav
+
+scp -P 30072 cloudera@165.204.53.121:/home/cloudera/demo_tts/src/en-india.wav .
+```
+
 <div align="center">
   <div>&nbsp;</div>
   <img src="logo.png" width="300"/> 
