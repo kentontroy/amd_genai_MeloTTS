@@ -17,7 +17,6 @@ def show_help():
 
 def generate_speech_from_text(text: str, file_output_path: str):
 # Indian accent
-  file_output_path = "en-india.wav"
   model.tts_to_file(text, speaker_ids[EN_ACCENT], file_output_path, speed=SPEECH_SPEED)
 
 if __name__== '__main__':
